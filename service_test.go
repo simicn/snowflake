@@ -10,7 +10,7 @@ import (
 
 const (
 	address  = "localhost:10000"
-	test_key = "test_key"
+	test_key = "snowflake-uuid"
 )
 
 func TestSnowflake(t *testing.T) {

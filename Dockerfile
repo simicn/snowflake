@@ -1,6 +1,5 @@
-FROM golang:latest
-MAINTAINER xtaci <daniel820313@gmail.com>
-COPY . /go/src/snowflake
-RUN go install snowflake
-ENTRYPOINT ["/go/bin/snowflake"]
+FROM alpine:latest
+MAINTAINER simi <simiwei@gmail.com>
+COPY snowflake /usr/bin/
+ENTRYPOINT ["/usr/bin/snowflake"]
 EXPOSE 10000 6060
