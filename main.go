@@ -24,26 +24,31 @@ func main() {
 				Name:  "listen",
 				Value: ":10000",
 				Usage: "listening address:port",
+				EnvVars: []string{"LISTEN"},
 			},
 			&cli.StringSliceFlag{
 				Name:  "etcd-hosts",
 				Value: cli.NewStringSlice("http://127.0.0.1:2379"),
 				Usage: "etcd hosts",
+				EnvVars: []string{"ETCD_HOSTS"},
 			},
 			&cli.IntFlag{
 				Name:  "machine-id",
 				Value: 0,
 				Usage: "snowflake machine id, 0-1023",
+				EnvVars: []string{"MACHINE_ID"},
 			},
 			&cli.StringFlag{
 				Name:  "pk-root",
 				Value: "/seqs",
 				Usage: "path for auto increment primary keys",
+				EnvVars: []string{"PK_ROOT"},
 			},
 			&cli.StringFlag{
 				Name:  "uuid-key",
 				Value: "/seqs/snowflake-uuid",
 				Usage: "uuid main key",
+				EnvVars: []string{"UUID_KEY"},
 			},
 		},
 		Action: func(c *cli.Context) error {
